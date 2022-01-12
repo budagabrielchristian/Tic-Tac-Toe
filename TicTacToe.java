@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 public class TicTacToe implements ActionListener {
    JFrame frame = new JFrame();
@@ -57,8 +58,9 @@ public class TicTacToe implements ActionListener {
       buttonClicked.setEnabled(false);
    }
   public void checkStateVoid() {
-      int playerOneWins = -1, playerTwoWins = -1, draw = -1;
-
+	  UIManager.put("OptionPane.okButtonText", "Play Again!");
+	  int playerOneWins = -1, playerTwoWins = -1, draw = -1;
+      
       if (buttons[0].getText() == buttons[1].getText() &&
           buttons[1].getText() == buttons[2].getText() &&
           !buttons[1].getText().isBlank()) {
