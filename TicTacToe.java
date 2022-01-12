@@ -38,8 +38,7 @@ public class TicTacToe implements ActionListener {
          frame.add(buttons[i]);
       }
    }
-   @Override 
-   public void actionPerformed(ActionEvent e) {
+   @Override public void actionPerformed(ActionEvent e) {
       JButton buttonClicked = (JButton)e.getSource();
       for (JButton testA : buttons) {
          if (e.getSource() == testA) {
@@ -58,62 +57,102 @@ public class TicTacToe implements ActionListener {
       buttonClicked.setEnabled(false);
    }
   public void checkStateVoid() {
+      int playerOneWins = -1, playerTwoWins = -1, draw = -1;
+
       if (buttons[0].getText() == buttons[1].getText() &&
           buttons[1].getText() == buttons[2].getText() &&
           !buttons[1].getText().isBlank()) {
          if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[3].getText() == buttons[4].getText() &&
                  buttons[4].getText() == buttons[5].getText() &&
                  !buttons[3].getText().isBlank()) {
-         if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+         if (buttons[3].getText().equals("X")) {
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[6].getText() == buttons[7].getText() &&
                  buttons[7].getText() == buttons[8].getText() &&
                  !buttons[6].getText().isBlank()) {
-         if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+         if (buttons[6].getText().equals("X")) {
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[0].getText() == buttons[3].getText() &&
                  buttons[3].getText() == buttons[6].getText() &&
                  !buttons[0].getText().isBlank()) {
          if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[1].getText() == buttons[4].getText() &&
                  buttons[4].getText() == buttons[7].getText() &&
                  !buttons[1].getText().isBlank()) {
-         if (buttons[0].getText().equals("X")) {
+         if (buttons[1].getText().equals("X")) {
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         } else {
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
+         }
+         return;
+      } else if (buttons[2].getText() == buttons[5].getText() &&
+                 buttons[5].getText() == buttons[8].getText() &&
+                 !buttons[2].getText().isBlank()) {
+         if (buttons[2].getText().equals("X")) {
             JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
                                           JOptionPane.CLOSED_OPTION,
                                           JOptionPane.INFORMATION_MESSAGE);
@@ -122,50 +161,57 @@ public class TicTacToe implements ActionListener {
                                           JOptionPane.CLOSED_OPTION,
                                           JOptionPane.INFORMATION_MESSAGE);
          }
-         return;
-      } else if (buttons[2].getText() == buttons[5].getText() &&
-                 buttons[5].getText() == buttons[8].getText() &&
-                 !buttons[2].getText().isBlank()) {
-         if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
-         } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[0].getText() == buttons[4].getText() &&
                  buttons[4].getText() == buttons[8].getText() &&
                  !buttons[0].getText().isBlank()) {
          if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       } else if (buttons[2].getText() == buttons[4].getText() &&
                  buttons[4].getText() == buttons[6].getText() &&
                  !buttons[2].getText().isBlank()) {
-         if (buttons[0].getText().equals("X")) {
-            JOptionPane.showConfirmDialog(frame, "Player Two wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+         if (buttons[2].getText().equals("X")) {
+            playerTwoWins = JOptionPane.showConfirmDialog(
+                frame, "Player Two wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
          } else {
-            JOptionPane.showConfirmDialog(frame, "Player One wins!", "Winner",
-                                          JOptionPane.CLOSED_OPTION,
-                                          JOptionPane.INFORMATION_MESSAGE);
+            playerOneWins = JOptionPane.showConfirmDialog(
+                frame, "Player One wins!", "Winner", JOptionPane.CLOSED_OPTION,
+                JOptionPane.INFORMATION_MESSAGE);
+         }
+         if (playerTwoWins == JOptionPane.OK_OPTION ||
+             playerOneWins == JOptionPane.OK_OPTION || draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
          }
          return;
       }
       if (clickedButtons == 9) {
-         JOptionPane.showConfirmDialog(frame, "DRAW", "Winner", JOptionPane.CLOSED_OPTION,
-                                       JOptionPane.INFORMATION_MESSAGE);
+         draw = JOptionPane.showConfirmDialog(frame, "DRAW", "Winner",
+                                              JOptionPane.CLOSED_OPTION,
+                                              JOptionPane.INFORMATION_MESSAGE);
+         if (draw == JOptionPane.OK_OPTION) {
+            TicTacToe newGame = new TicTacToe();
+            frame.dispose();
+         }
       }
    }
 }
